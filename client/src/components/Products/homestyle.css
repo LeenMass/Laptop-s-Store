@@ -1,0 +1,38 @@
+h2 {
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+  }
+  .card {
+    text-align: center;
+    margin-top: auto;
+    width: 300px;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  img {
+    height: 100px;
+    width: "auto";
+  }
+  
+  fieldset {
+    width: 150px;
+    text-align: left;
+    border-radius: 10px;
+  }
+  
+  .filters {
+    width: 200px;
+    padding: 8px;
+  }
+  
+  .page {
+    display: flex;
+    text-align: center;
+  }
+  

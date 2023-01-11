@@ -1,0 +1,28 @@
+
+.nav{
+    overflow: hidden;
+    background-color: rgb(188, 220, 238);
+    color: black;
+    width:100%;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+}
+.container{
+ padding-left: 7px;
+}
+
+ .loggedIn{
+    float: left;
+    display:flex;
+    margin-right: 400px;
+
+}
+
+.welcome{
+    display:flex;
+    justify-content: space-between; 
+    margin-top: 20px;
+    margin-right: 100px;
+}
