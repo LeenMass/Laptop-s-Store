@@ -4,10 +4,8 @@ export default function AddingProducts() {
     name: "",
     brand: "",
     img: "",
-    color: "",
     price: "",
-    model: "",
-    category: "",
+   description:""
   });
   // key -> 'name'
   const onChange = (key) => (e) => setForm({ ...form, [key]: e.target.value });
@@ -15,7 +13,7 @@ export default function AddingProducts() {
     try {
       const body = form;
       console.log(body);
-      const res = await fetch("http://localhost:4000/Products", {
+      const res = await fetch("http://localhost:4000/AddingProducts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
@@ -60,13 +58,12 @@ export default function AddingProducts() {
           />
           <br />
           <br />
-          {/* <label htmlFor="color">Color:</label>
-          <input
-            type="text"
-            id="color"
-            name="color"
-            value={form.color}
-            onChange={onChange("color")}
+           <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            name="description"
+            value={form.description}
+            onChange={onChange("description")}
           />
           <br />
           <br />
@@ -80,7 +77,7 @@ export default function AddingProducts() {
           />
           <br />
           <br />
-          / */}
+          
           <input type="submit" value="submit" />
         </fieldset>
       </form>
