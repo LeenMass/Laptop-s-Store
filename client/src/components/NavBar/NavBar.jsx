@@ -1,13 +1,7 @@
 import React from "react";
 import "../NavBar/navstyle.css";
-import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
-import LogIn from "../SignIn/LogIn";
-import Profile from "../Profile/Profile";
-import SignUp from "../Registration/SignUp";
-import Payment from "../PaymentFile/Payment";
-import Cart from "../Shopping/Cart";
-import Orders from "../OrderHistory/Orders";
-import Home from "../Products/Home";
+import {  NavLink } from "react-router-dom";
+
 
 export default function NavBar() {
   let userId = document.cookie.slice(7);
@@ -34,7 +28,7 @@ export default function NavBar() {
   }, []);
   const logout = async () => {
     // window.localStorage.removeItem("user"); // reset user key in local storage
-    await fetch(`http://localhost:4000/logout`, {
+    await fetch(`http://localhost:4000/logOut`, {
       credentials: "include",
     });
     setIsloggedIn(false);
@@ -42,7 +36,6 @@ export default function NavBar() {
 
   return (
     <div>
-      <BrowserRouter>
         <nav className="nav">
           <NavLink to="/" style={{ padding: "10px" }}>
             Home{" "}
@@ -74,16 +67,7 @@ export default function NavBar() {
           )}
         </nav>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/LogIn" element={<LogIn />} />
-          <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/Payment" element={<Payment />} />
-          <Route path="/Profile" element={<Profile />} />
-          <Route path="/Cart" element={<Cart />} />
-          <Route path="/Orders" element={<Orders />} />
-        </Routes>
-      </BrowserRouter>
+     
     </div>
   );
 }

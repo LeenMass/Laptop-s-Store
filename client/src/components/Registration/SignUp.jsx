@@ -14,7 +14,7 @@ export default function SignUp() {
     try {
       const body = data;
       console.log(body);
-      const res = await fetch("http://localhost:4000/users", {
+      const res = await fetch("http://localhost:4000/SignUp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
