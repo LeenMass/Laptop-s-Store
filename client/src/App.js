@@ -11,6 +11,7 @@ import Cart from './components/Shopping/Cart';
 import Orders from './components/OrderHistory/Orders';
 import ProductInfo from './components/ProductDetails/ProductInfo';
 import { BrowserRouter, Route, Routes} from "react-router-dom";
+import About from './components/About';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Orders" element={<Orders />} />
           <Route path="/products/:id" element={<ProductInfo />} />
+          <Route path='/about' element={<About/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
