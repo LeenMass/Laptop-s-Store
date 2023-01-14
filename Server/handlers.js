@@ -1,4 +1,4 @@
-const db = require('./DataBase/connection');
+const db = require('./Database/connection');
 const bcrypt = require("bcrypt")
 const saltRounds = 10;
 
@@ -9,7 +9,7 @@ const products = async (req, res) => {
 
     }
     catch (err) {
-        res.status(500).send(`<h1>${err}</h1>`);
+        res.json(`<h1>${err}</h1>`);
     }
 }
 const productInfo = async (req, res) => {
@@ -39,7 +39,7 @@ const AddToCart = async (req, res) => {
             const products = JSON.stringify([product])
             const totalPrice = product.quantity * product.price
 
-            await db.query("INSERT INTO cart (user_id, total_price, products) Values ($1,$2,$3)", [req.cookies.userId, totalPrice, products]);
+            await db.query("INSERT INTO cart (user_id, total_price, products) Values ($1,$2,$3)", [req.cookies.userId, totalPrice.toFixed(2), products]);
         }
         else {
             let isProductExist = result.rows[0].products.find((currProduct) => currProduct.id === product.id)

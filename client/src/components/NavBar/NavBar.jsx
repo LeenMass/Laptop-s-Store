@@ -65,6 +65,9 @@ export default function NavBar() {
               </NavLink>
             </>
           )}
+          <NavLink to="/about">
+             about
+          </NavLink>
         </nav>
 
      
