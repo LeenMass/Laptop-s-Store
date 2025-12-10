@@ -1,6 +1,5 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import React from "react";
 import Home from "./components/Products/Home";
 import LogIn from "./components/SignIn/LogIn";
 import SignUp from "./components/Registration/SignUp";
@@ -13,7 +12,7 @@ import ProductInfo from "./components/ProductDetails/ProductInfo";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./components/About";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
@@ -33,6 +32,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
